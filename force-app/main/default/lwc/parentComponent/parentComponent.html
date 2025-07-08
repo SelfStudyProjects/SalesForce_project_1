@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : developer@example.com
+  @group             : 
+  @last modified on  : 2025-07-08
+  @last modified by  : developer@example.com
+-->
+<template>
+    <div class="">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label="Test" onclick={handleClick}>
+            </lightning-button>
+        </div>
+        <c-contact-list
+            const class="dkbmc-contact-list"
+            lwc-module="parentComponent"
+            account-id={recordId}
+            onrowselection={handleSelection}>
+        </c-contact-list>
+    </div>
+</template>

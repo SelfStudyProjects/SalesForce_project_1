@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : developer@example.com
+  @group             : 
+  @last modified on  : 2025-07-08
+  @last modified by  : developer@example.com
+-->
+<template>
+    <div class="slds-box dkbmc-full-box slds-container_fluid sild-color__backgroud_gray-1">
+            <div class="slds-card">
+                <div class="slds-card__header slds-grid">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__figure">
+                            <lightning-icon icon-name="standard:contact" size="small"></lightning-icon>
+                        </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span>Contact List</span>
+                            </h2>
+                        </div>
+                    </header>
+                </div>
+                <div class="slds-card__body slds-card__body_inner">
+                    
+                    <lightning-datatable
+                        key-field="id"
+                        data={contacts}
+                        columns={columns}
+                        onrowselection={handleRowSelection}>
+                    </lightning-datatable>
+                </div>
+            </div>
+        </div>
+</template>
+ 

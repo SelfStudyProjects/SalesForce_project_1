@@ -18,8 +18,9 @@ public with sharing class AccountController {
             insert myAccount;
         }
     }
- 
-    public List<Account> getAccountList() {
+    
+    @AuraEnabled 
+    public static List<Account> getAccountList() {
  
         String query = 'SELECT Id, Name FROM Account';
         List<Account> lacc = Database.query(query, AccessLevel.USER_MODE);
@@ -58,4 +59,16 @@ public with sharing class AccountController {
         }
         return lacc;
     }
-}
+    @AuraEnabled
+    public static List<Contact> getContactList(List<String> accountIds){
+        try {
+            String query = 'SELECT Id, LastName, FirstName, Title ';
+            query += 'FROM Contact ';
+            query += 'WHERE AccountId in :accountIds ';
+ 
+            return Database.query(query, AccessLevel.USER_MODE);
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+ }
