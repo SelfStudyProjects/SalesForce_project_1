@@ -60,13 +60,8 @@ export default class ContactList extends LightningElement {
             console.log('selectedRows: ', selectedRows);
 
             const customEvent = new CustomEvent('rowselection', {
-                detail: {value : selectedRows
+                detail: {values : selectedRows
                 }
-            });
-            this.dispatchEvent(customEvent);{
-                detail: {
-                    values : selectedRows
-                }   
             });
             this.dispatchEvent(customEvent);
         } catch(e) {
